@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOOLI Entreprise</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-glossy-touch.css') }}">
+<!--
+
+TemplateMo 592 glossy touch
+
+https://templatemo.com/tm-592-glossy-touch
+
+-->
+    <style>
+    </style>
+</head>
+<body>
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- SINGLE NAVIGATION HEADER -->
+    <header>
+        <div class="container">
+            <nav class="glass">
+                <div class="logo" onclick="showPage('home')">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid of circles with varying sizes -->
+                            <circle cx="16" cy="16" r="5" opacity="0.9"/>
+                            <circle cx="32" cy="16" r="4" opacity="0.8"/>
+                            <circle cx="16" cy="32" r="4" opacity="0.7"/>
+                            <circle cx="32" cy="32" r="5" opacity="0.85"/>
+                            <!-- Small accent dots -->
+                            <circle cx="24" cy="8" r="2" opacity="1"/>
+                            <circle cx="8" cy="24" r="2" opacity="0.9"/>
+                            <circle cx="40" cy="24" r="2" opacity="0.9"/>
+                            <circle cx="24" cy="40" r="2" opacity="1"/>
+                            <!-- Tiny corner dots -->
+                            <circle cx="8" cy="8" r="1" opacity="0.6"/>
+                            <circle cx="40" cy="8" r="1" opacity="0.6"/>
+                            <circle cx="8" cy="40" r="1" opacity="0.6"/>
+                            <circle cx="40" cy="40" r="1" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <span>Kooli Entreprise</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('home')" class="active">Accueil</a>
+                    <a href="#" onclick="showPage('services')">À Propos</a>
+                    <a href="#" onclick="showPage('about')">Modes</a>
+                    <a href="#" onclick="showPage('demo')">Démo</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/templatemo-futuristic-girl.jpg') }}" alt="Modern Technology Interaction" />
+                    </div>
+                    <div class="hero-content">
+                        <h1>Gérez mieux, gagnez plus!</h1>
+                        <p>Notre société <strong>Kooli Entreprise</strong> est une entreprise spécialisée dans l'analyse et la classification des inventaires.</p>
+                        <a href="#" class="cta-button" onclick="showPage('about')">Découvrir plus</a>
+                    </div>
+                </section>
+
+                <section class="features">
+                    <div class="feature-card glass">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Analyse intelligente</h3>
+                        <p>Classez automatiquement vos produits selon leur importance.</p>
+                    </div>
+                    
+                    <div class="feature-card glass">
+                        <div class="feature-icon">📈</div>
+                        <h3>Visualisation claire</h3>
+                        <p>Graphiques et tableaux dynamiques pour comprendre vos inventaires en un coup d’œil.</p>
+                    </div>
+                    
+                    <div class="feature-card glass">
+                        <div class="feature-icon">🕙</div>
+                        <h3>Décisions rapides</h3>
+                        <p>Assurer la disponibilité des produits pour éviter les ruptures.</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">💰</div>
+                        <h3>Maîtriser les coûts de stockage</h3>
+                        <p>Réduire les coûts de stockage (entrepôt, main-d'œuvre, pertes, obsolescence).</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">💡</div>
+                        <h3>Solutions personnalisée</h3>
+                        <p>Un outil adaptable à la taille, au secteur et aux besoins spécifiques de chaque société.</p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon">🖥️</div>
+                        <h3>Interface intuitive</h3>
+                        <p>Une platforme simple et claire, pensée pour une utilisation rapide et sans difficultés.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+    <div class="container">
+        <div class="content-wrapper">
+            <section class="about-content">
+                <!-- TITRE PRINCIPAL CENTRÉ EN HAUT -->
+                <div class="about-text glass centered-title">
+                    <h2>Les différents modes de gestion de stock</h2>
+                    <p>Il existe plusieurs méthodes pour gérer efficacement les stocks, chacune adaptée à des besoins spécifiques. Voici les principales approches utilisées par les entreprises.</p>
+                </div>
+
+                <!-- SECTION ABC AVEC IMAGE À DROITE -->
+                <div class="abc-section">
+                    <div class="abc-content">
+                        <div class="about-text glass">
+                            <h2>Analyse ABC</h2>
+                            <br>
+                            <p>L'analyse ABC est une méthode de classification découlant du principe de Pareto. Elle est fréquemment utilisée dans le domaine de l'analyse des stocks.</p>
+                            <p>L'analyse ABC permet d'identifier les articles ayant un impact important sur une valeur globale (de stock, de vente, de coût…).</p>
+                            <p>Seulement <strong>20% des articles</strong> (classe A) représentent typiquement <strong>80% de la valeur totale</strong>, tandis que la majorité des articles (classe C) 
+                            ont peu d'impact financier. Cette analyse permet d'optimiser les ressources en concentrant les efforts sur les items les plus critiques.</p>
+                        </div>
+                    </div>
+                    <div class="abc-image">
+                        <!-- VOTRE IMAGE -->
+                        <img src="../static/images/abcclassification.jpg" alt="Graphique analyse ABC" class="abc-visual glass">
+                    </div>
+                </div>
+
+                <!-- RÉSUMÉ ABC AVEC GRID -->
+                <div class="about-text glass abc-summary-box">
+                    <p class="principle"><strong>Principe :</strong> Classer les articles selon leur importance économique.</p>
+                    
+                    <div class="categories-grid">
+                        <div class="category-item">
+                            <div class="category-header">A</div>
+                            <div class="category-content">
+                                <strong>Articles très coûteux</strong>
+                                <p>Mais peu nombreux</p>
+                            </div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-header">B</div>
+                            <div class="category-content">
+                                <strong>Articles intermédiaires</strong>
+                                <p>Valeur et quantité modérées</p>
+                            </div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-header">C</div>
+                            <div class="category-content">
+                                <strong>Articles peu coûteux</strong>
+                                <p>Mais très nombreux</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pros-cons-grid">
+                        <div class="pros">
+                            <strong>✅ Avantage</strong>
+                            <p>Concentration des efforts sur les produits les plus importants</p>
+                        </div>
+                        <div class="cons">
+                            <strong>⚠️ Inconvénient</strong>
+                            <p>Nécessite une analyse statistique régulière</p>
+                        </div>
+                    </div>
+                </div><!-- MÉTHODE FIFO / LIFO -->
+                <div class="abc-section">
+                    <div class="abc-content">
+                        <div class="about-text glass">
+                            <h2>Méthode FIFO / LIFO</h2>
+                            <br>
+                            <p>Ces deux méthodes définissent l'ordre dans lequel les articles sont sortis du stock, ce qui impacte directement la valorisation des stocks et le calcul des coûts.</p>
+                            
+                            <div class="method-comparison">
+                                <div class="method-item">
+                                    <h3>FIFO (First In, First Out)</h3>
+                                    <p>Les articles les plus anciens sont utilisés en premier. Cette méthode est particulièrement adaptée pour les produits périssables ou sujets à l'obsolescence.</p>
+                                </div>
+                                <div class="method-item">
+                                    <h3>LIFO (Last In, First Out)</h3>
+                                    <p>Les articles les plus récents sont sortis en premier. Moins courante en pratique, elle est parfois utilisée pour des raisons fiscales spécifiques.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GESTION PAR POINT DE COMMANDE -->
+                <div class="abc-section">
+                    <div class="abc-content">
+                        <div class="about-text glass">
+                            <h2>Gestion par point de commande</h2>
+                            <br>
+                            <p>Cette méthode de réapprovisionnement est déclenchée automatiquement dès que le niveau de stock atteint un seuil critique prédéfini, appelé point de commande.</p>
+                            <p>Le point de commande est calculé en fonction de la demande moyenne pendant le délai de livraison, augmenté d'un stock de sécurité pour faire face aux aléas.</p>
+                            <p><strong>Avantage principal :</strong> Simplicité de mise en œuvre et réactivité face aux variations de consommation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLANIFICATION DES BESOINS EN COMPOSANTS (MRP) -->
+                <div class="abc-section">
+                    <div class="abc-content">
+                        <div class="about-text glass">
+                            <h2>Planification des besoins en composants (MRP)</h2>
+                            <br>
+                            <p>Système de planification basé sur la décomposition du produit fini en ses différents composants, avec établissement de calendriers de besoins pour chaque élément en fonction du plan de production.</p>
+                            <p>Le MRP permet de déterminer précisément quels composants commander, en quelle quantité et à quelle date, en se basant sur :</p>
+                            <ul class="service-features">
+                                <li>Le plan directeur de production</li>
+                                <li>Les nomenclatures des produits</li>
+                                <li>Les stocks disponibles</li>
+                                <li>Les délais d'approvisionnement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                    <h1>La gestion de stock</h1>
+                    <p>Ensemble de processus permettant de planifier, organiser, contrôler et optimizer les flux des biens au sein d'une organisation.</p>
+                </section>
+
+                <section class="services-grid">
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <div class="service-icon">💵</div>
+                            <h3>Enjeux Économiques</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li>Réduction des coûts de stockage</li>
+                            <li>Amélioration de la rentabilité</li>
+                            <li>Limitation du capital immobilisé</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <div class="service-icon">⚙️</div>
+                            <h3>Enjeux Opérationnels </h3>
+                        </div>
+                        <ul class="service-features">
+                            <li>Disponibilité des produits</li>
+                            <li>Continuité de la production ou de la distribution</li>
+                            <li>Satisfaction client</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <div class="service-icon">📋</div>
+                            <h3>Enjeux Stratégiques </h3>
+                        </div>
+                        <ul class="service-features">
+                            <li>Adaptation à la demande</li>
+                            <li>Réactivité face aux ruptures ou surstocks</li>
+                            <li>Alignement avec les objectifs de supply chain</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card glass">
+                        <div class="service-header">
+                            <div class="service-icon">♻️</div>
+                            <h3>Enjeux Environnementaux</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li>Limitation du gaspillage</li>
+                            <li>Gestion des dates de péremption</li>
+                            <li>Optimisation des livraisons</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- EOQ THEORY SECTION -->
+            <section class="theory-section">
+                <div class="theory-card glass">
+                    <div class="theory-header">
+                        <div class="theory-icon"></div>
+                        <h3>Modèle de la quantité économique de commande (EOQ)</h3>
+                    </div>
+                    <div class="theory-content">
+                        <p>Ce modèle vise à déterminer la <strong>quantité optimale</strong> à commander afin de minimiser le total des coûts :</p>
+                        <ul class="theory-features">
+                            <li>Coûts de commande</li>
+                            <li>Coûts de possession</li>
+                            <li>Coûts de rupture</li>
+                        </ul>
+                        <div class="formula-section">
+                            <h4>Formule :</h4>
+                            <div class="formula-box">
+                                EOQ = √(2DS/H)
+                            </div>
+                            <div class="formula-variables">
+                                <p><strong>Où :</strong></p>
+                                <ul>
+                                    <li><strong>D</strong> = Demande annuelle</li>
+                                    <li><strong>S</strong> = Coût de passation de commande par commande</li>
+                                    <li><strong>H</strong> = Coût de possession par unité par an</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- MODÈLE DU POINT DE COMMANDE -->
+<section class="theory-section">
+    <div class="theory-card glass">
+        <div class="theory-header">
+            <div class="theory-icon"></div>
+            <h3>Modèle du Point de Commande (Reorder Point)</h3>
+        </div>
+        <div class="theory-content">
+            <p><strong>Définition :</strong> Le point de commande (noté PC ou ROP en anglais) est le niveau de stock auquel une nouvelle commande doit être passée afin d'éviter la rupture pendant le délai d'approvisionnement.</p>
+            <p>En d'autres termes : quand le stock atteint ce seuil, il faut commander immédiatement pour que la livraison arrive juste à temps avant la rupture.</p>
+            
+            <div class="formula-section">
+                <h4>Formule de base :</h4>
+                <div class="formula-box">
+                    Point de Commande (PC) = D<sub>L</sub> = d × L
+                </div>
+                <div class="formula-variables">
+                    <p><strong>Où :</strong></p>
+                    <ul>
+                        <li><strong>d</strong> = demande moyenne journalière (unités/jour)</li>
+                        <li><strong>L</strong> = délai d'approvisionnement (jours)</li>
+                        <li><strong>D<sub>L</sub></strong> = demande pendant le délai de livraison</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+             <!-- JUSTE-À-TEMPS THEORY -->
+            <section class="theory-section">
+                <div class="theory-card glass">
+                    <div class="theory-header">
+                        <h3>Modèle du Juste-à-Temps (JAT / JIT)</h3>
+                    </div>
+                    <div class="theory-content">
+                        <p>Popularisée par Toyota, elle repose sur la réduction maximale des stocks par une production en flux tiré, en fonction de la demande réelle.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODÈLE DE WILSON THEORY -->
+            <section class="theory-section">
+                <div class="theory-card glass">
+                    <div class="theory-header">
+                        <h3>Modèle de Wilson</h3>
+                    </div>
+                    <div class="theory-content">
+                        <p>C'est une application concrète de l'EOQ, combinant les paramètres logistiques et économiques pour déterminer les quantités optimales de réapprovisionnement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STOCK DE SÉCURITÉ THEORY -->
+            <section class="theory-section">
+                <div class="theory-card glass">
+                    <div class="theory-header">
+                        <h3>Modèle du stock de sécurité</h3>
+                    </div>
+                    <div class="theory-content">
+                        <p>Elle s'appuie sur une approche probabiliste pour définir un niveau tampon permettant de faire face aux aléas de la demande ou aux délais fournisseurs.</p>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div>
+    </div>
+
+<!-- INTERACTIVE DEMO -->
+<div id="demo" class="page">
+    <div class="container">
+        <div class="content-wrapper">
+            <section class="hero glass">
+                <h1>Analyse ABC des stocks</h1>
+                <!-- ADD THIS BUTTON -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <button class="cta-button analyze-btn" onclick="runABCAnalysis()" id="analyze-btn">
+                        <i class="fas fa-chart-bar"></i> Lancer l'analyse ABC
+                    </button>
+                </div>
+            </section>
+
+            <!-- EDITABLE INVENTORY TABLE (ONLY ONE!) -->
+            <section class="inventory-section glass">
+                <div class="section-header">
+                    <h2>Données d'inventaire d'exemple</h2>
+                </div>
+
+                <div class="table-container">
+                    <table class="inventory-table" id="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom de l'article</th>
+                                <th>Catégorie</th>
+                                <th>Quantité</th>
+                                <th>Coût unitaire ($)</th>
+                                <th>Délai de livraison (jours)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table-body">
+                            <!-- Sample data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ABC ANALYSIS RESULTS SECTION -->
+            <section class="analysis-section glass" id="analysis-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Résultats de l'analyse ABC</h2>
+                    <button class="cta-button" onclick="runABCAnalysis()"> Relancer l'analyse</button>
+                </div>
+
+                <!-- Analysis Summary -->
+                <div class="analysis-summary">
+                    <h3>Synthèse du stock</h3>
+                    <div class="summary-stats">
+                        <div class="summary-card">
+                            <span class="summary-value" id="total-items">0</span>
+                            <span class="summary-label">Total des articles</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-value" id="total-value">$0</span>
+                            <span class="summary-label">Valeur annuelle totale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABC Classification Chart -->
+<div class="chart-container" style="text-align: center; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+    <h3 style="color: white; margin-bottom: 1.5rem;">ABC Classification - Bar Chart</h3>
+    <img src="${result.bar_chart}" alt="ABC Bar Chart" style="max-width: 100%; border-radius: 10px; background: white; padding: 10px;">
+</div>
+
+<!-- Cumulative Chart - JUSTE EN DESSOUS -->
+<div class="chart-container" style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+    <h3 style="color: white; margin-bottom: 1.5rem;">Analyse ABC - Courbe cumulative</h3>
+    <img src="${result.cumulative_chart}" alt="ABC Cumulative Chart" style="max-width: 100%; border-radius: 10px; background: white; padding: 10px;">
+</div>
+                
+
+                <!-- ABC Statistics -->
+                <div class="abc-stats">
+                    <div class="stat-card a-stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" id="a-count">0</div>
+                        <div class="stat-label">A Items</div>
+                        <div class="stat-desc">Top 80% of Value</div>
+                        <div class="stat-value" id="a-value">$0</div>
+                    </div>
+                    <div class="stat-card b-stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" id="b-count">0</div>
+                        <div class="stat-label">B Items</div>
+                        <div class="stat-desc">Next 15% of Value</div>
+                        <div class="stat-value" id="b-value">$0</div>
+                    </div>
+                    <div class="stat-card c-stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" id="c-count">0</div>
+                        <div class="stat-label">C Items</div>
+                        <div class="stat-desc">Last 5% of Value</div>
+                        <div class="stat-value" id="c-value">$0</div>
+                    </div>
+                </div>
+
+                <!-- Detailed Results Table -->
+                <div class="results-container">
+                    <h3>Analyse détaillée</h3>
+                    <div class="table-container">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom de l'article</th>
+                                    <th>Catégorie</th>
+                                    <th>Usage annuel</th>
+                                    <th>% Cumulé</th>
+                                    <th>Classe ABC</th>
+                                    <th>Point de commande</th>
+                                    <th>QEC</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table-body">
+                                <!-- Results will be populated here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    <!-- SINGLE FOOTER -->
+    <div id="footer">
+        <div class="container">
+            <footer class="glass">
+                <div class="footer-content">
+                    <div class="copyright">
+                        &copy; 2025 KOOLI Wissem, Étudiant en génie industriel. Tous droits réservés.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='js/templatemo-glossy-touch.js') }}"></script>
+
+<script>
+    // Your complete sample data - ALL 50 ITEMS
+    const sampleData = [
+        {Item_ID: 'SKU-001', Item_Name: 'Laptop Pro', Category: 'Electronics', Quantity: 0, Unit_Cost: 899.99, Lead_Time_Days: 7},
+        {Item_ID: 'SKU-002', Item_Name: 'Steel Bolt Elite', Category: 'Hardware', Quantity: 500, Unit_Cost: 0.75, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-003', Item_Name: 'Notebook Standard', Category: 'Office Supplies', Quantity: 200, Unit_Cost: 2.49, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-004', Item_Name: 'Flashlight Basic', Category: 'Tools', Quantity: 80, Unit_Cost: 12.99, Lead_Time_Days: 5},
+        {Item_ID: 'SKU-005', Item_Name: 'Desk Chair Plus', Category: 'Furniture', Quantity: 30, Unit_Cost: 149.50, Lead_Time_Days: 10},
+        {Item_ID: 'SKU-006', Item_Name: 'Smartphone Elite', Category: 'Electronics', Quantity: 75, Unit_Cost: 699.99, Lead_Time_Days: 5},
+        {Item_ID: 'SKU-007', Item_Name: 'Nail Pack Basic', Category: 'Hardware', Quantity: 800, Unit_Cost: 0.99, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-008', Item_Name: 'Pen Set Pro', Category: 'Office Supplies', Quantity: 150, Unit_Cost: 4.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-009', Item_Name: 'Battery Pack Standard', Category: 'Tools', Quantity: 120, Unit_Cost: 24.50, Lead_Time_Days: 4},
+        {Item_ID: 'SKU-010', Item_Name: 'Bookshelf Basic', Category: 'Furniture', Quantity: 25, Unit_Cost: 89.99, Lead_Time_Days: 14},
+        {Item_ID: 'SKU-011', Item_Name: 'Monitor Pro', Category: 'Electronics', Quantity: 40, Unit_Cost: 249.99, Lead_Time_Days: 7},
+        {Item_ID: 'SKU-012', Item_Name: 'Screwdriver Elite', Category: 'Hardware', Quantity: 300, Unit_Cost: 6.50, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-013', Item_Name: 'Stapler Standard', Category: 'Office Supplies', Quantity: 180, Unit_Cost: 8.99, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-014', Item_Name: 'Extension Cord Basic', Category: 'Tools', Quantity: 90, Unit_Cost: 15.75, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-015', Item_Name: 'Filing Cabinet Plus', Category: 'Furniture', Quantity: 15, Unit_Cost: 199.00, Lead_Time_Days: 10},
+        {Item_ID: 'SKU-016', Item_Name: 'Keyboard Pro', Category: 'Electronics', Quantity: 100, Unit_Cost: 49.99, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-017', Item_Name: 'Wrench Elite', Category: 'Hardware', Quantity: 250, Unit_Cost: 7.25, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-018', Item_Name: 'Paper Clip Box Standard', Category: 'Office Supplies', Quantity: 400, Unit_Cost: 1.25, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-019', Item_Name: 'Safety Gloves Basic', Category: 'Tools', Quantity: 200, Unit_Cost: 5.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-020', Item_Name: 'Coffee Table Plus', Category: 'Furniture', Quantity: 20, Unit_Cost: 129.99, Lead_Time_Days: 12},
+        {Item_ID: 'SKU-021', Item_Name: 'Mouse Pro', Category: 'Electronics', Quantity: 120, Unit_Cost: 19.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-022', Item_Name: 'Drill Bit Elite', Category: 'Hardware', Quantity: 150, Unit_Cost: 3.99, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-023', Item_Name: 'Highlighter Standard', Category: 'Office Supplies', Quantity: 300, Unit_Cost: 1.99, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-024', Item_Name: 'Duct Tape Basic', Category: 'Tools', Quantity: 250, Unit_Cost: 7.50, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-025', Item_Name: 'Lamp Plus', Category: 'Furniture', Quantity: 35, Unit_Cost: 45.99, Lead_Time_Days: 7},
+        {Item_ID: 'SKU-026', Item_Name: 'Headphones Pro', Category: 'Electronics', Quantity: 90, Unit_Cost: 79.99, Lead_Time_Days: 4},
+        {Item_ID: 'SKU-027', Item_Name: 'Hammer Elite', Category: 'Hardware', Quantity: 180, Unit_Cost: 12.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-028', Item_Name: 'Folder Standard', Category: 'Office Supplies', Quantity: 220, Unit_Cost: 2.25, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-029', Item_Name: 'Level Basic', Category: 'Tools', Quantity: 70, Unit_Cost: 9.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-030', Item_Name: 'Desk Plus', Category: 'Furniture', Quantity: 18, Unit_Cost: 299.00, Lead_Time_Days: 14},
+        {Item_ID: 'SKU-031', Item_Name: 'USB Cable Pro', Category: 'Electronics', Quantity: 200, Unit_Cost: 8.99, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-032', Item_Name: 'Pliers Elite', Category: 'Hardware', Quantity: 160, Unit_Cost: 10.50, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-033', Item_Name: 'Sticky Notes Standard', Category: 'Office Supplies', Quantity: 350, Unit_Cost: 3.25, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-034', Item_Name: 'Paint Brush Basic', Category: 'Tools', Quantity: 110, Unit_Cost: 6.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-035', Item_Name: 'Stool Plus', Category: 'Furniture', Quantity: 40, Unit_Cost: 59.99, Lead_Time_Days: 7},
+        {Item_ID: 'SKU-036', Item_Name: 'Power Adapter Pro', Category: 'Electronics', Quantity: 85, Unit_Cost: 29.99, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-037', Item_Name: 'Tape Measure Elite', Category: 'Hardware', Quantity: 120, Unit_Cost: 14.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-038', Item_Name: 'Binder Standard', Category: 'Office Supplies', Quantity: 90, Unit_Cost: 12.50, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-039', Item_Name: 'Saw Basic', Category: 'Tools', Quantity: 60, Unit_Cost: 22.99, Lead_Time_Days: 4},
+        {Item_ID: 'SKU-040', Item_Name: 'Whiteboard Plus', Category: 'Furniture', Quantity: 12, Unit_Cost: 89.99, Lead_Time_Days: 10},
+        {Item_ID: 'SKU-041', Item_Name: 'Laptop Basic', Category: 'Electronics', Quantity: 200, Unit_Cost: 599.99, Lead_Time_Days: 7},
+        {Item_ID: 'SKU-042', Item_Name: 'Steel Bolt Standard', Category: 'Hardware', Quantity: 600, Unit_Cost: 0.50, Lead_Time_Days: 3},
+        {Item_ID: 'SKU-043', Item_Name: 'Notebook Plus', Category: 'Office Supplies', Quantity: 250, Unit_Cost: 1.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-044', Item_Name: 'Flashlight Pro', Category: 'Tools', Quantity: 100, Unit_Cost: 15.99, Lead_Time_Days: 5},
+        {Item_ID: 'SKU-045', Item_Name: 'Desk Chair Elite', Category: 'Furniture', Quantity: 50, Unit_Cost: 179.50, Lead_Time_Days: 10},
+        {Item_ID: 'SKU-046', Item_Name: 'Smartphone Plus', Category: 'Electronics', Quantity: 60, Unit_Cost: 799.99, Lead_Time_Days: 5},
+        {Item_ID: 'SKU-047', Item_Name: 'Nail Pack Standard', Category: 'Hardware', Quantity: 900, Unit_Cost: 0.75, Lead_Time_Days: 1},
+        {Item_ID: 'SKU-048', Item_Name: 'Pen Set Basic', Category: 'Office Supplies', Quantity: 180, Unit_Cost: 3.99, Lead_Time_Days: 2},
+        {Item_ID: 'SKU-049', Item_Name: 'Battery Pack Pro', Category: 'Tools', Quantity: 150, Unit_Cost: 29.50, Lead_Time_Days: 4},
+        {Item_ID: 'SKU-050', Item_Name: 'Bookshelf Plus', Category: 'Furniture', Quantity: 30, Unit_Cost: 99.99, Lead_Time_Days: 14}
+    ];
+
+    // Load the sample data into the table
+    function loadSampleData() {
+        const tbody = document.getElementById('inventory-table-body');
+        tbody.innerHTML = '';
+
+        sampleData.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td contenteditable="true" onblur="updateData(${index}, 'Item_ID', this.textContent)">${item.Item_ID}</td>
+                <td contenteditable="true" onblur="updateData(${index}, 'Item_Name', this.textContent)">${item.Item_Name}</td>
+                <td contenteditable="true" onblur="updateData(${index}, 'Category', this.textContent)">${item.Category}</td>
+                <td contenteditable="true" onblur="updateData(${index}, 'Quantity', parseInt(this.textContent))">${item.Quantity}</td>
+                <td contenteditable="true" onblur="updateData(${index}, 'Unit_Cost', parseFloat(this.textContent))">${item.Unit_Cost}</td>
+                <td contenteditable="true" onblur="updateData(${index}, 'Lead_Time_Days', parseInt(this.textContent))">${item.Lead_Time_Days}</td>
+                <td class="actions">
+                    <button class="delete-btn" onclick="deleteRow(${index})">Delete</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    function updateData(index, field, value) {
+        if (field === 'Quantity' || field === 'Lead_Time_Days') {
+            value = parseInt(value) || 0;
+        } else if (field === 'Unit_Cost') {
+            value = parseFloat(value) || 0;
+        }
+        sampleData[index][field] = value;
+    }
+
+    function deleteRow(index) {
+        sampleData.splice(index, 1);
+        loadSampleData();
+    }
+
+    // Run ABC Analysis with loading animation
+    async function runABCAnalysis() {
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const analysisSection = document.getElementById('analysis-section');
+        
+        try {
+            // Show loading
+            analyzeBtn.textContent = 'Analyzing...';
+            analyzeBtn.disabled = true;
+            
+            analysisSection.style.display = 'block';
+            analysisSection.innerHTML = '<div style="text-align: center; padding: 3rem; color: white; font-size: 1.2rem;">Loading ABC Analysis...</div>';
+            
+            console.log('Sending data to Flask...');
+            
+            const response = await fetch('/analyze-inventory', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(sampleData)
+            });
+
+            if (!response.ok) throw new Error(`Server error: ${response.status}`);
+            
+            const result = await response.json();
+            console.log('Received:', result);
+            
+            // ⭐⭐ AJOUTEZ CES LIGNES POUR DEBUGGER ⭐⭐
+            console.log('✅ API Response received:', result);
+            console.log('📊 Bar chart exists:', !!result.bar_chart);
+            console.log('📈 Cumulative chart exists:', !!result.cumulative_chart);
+            console.log('🎯 Chart exists:', !!result.chart);
+            console.log('🔑 All keys:', Object.keys(result));
+            // ⭐⭐ FIN DU DEBUG ⭐⭐
+            if (result.success) {
+                displayAnalysisResults(result);
+            } else {
+                throw new Error(result.error);
+            }
+            
+        } catch (error) {
+            console.error('Error:', error);
+            analysisSection.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: white;">
+                    <h3 style="color: white; margin-bottom: 1rem;">❌ Analysis Failed</h3>
+                    <p style="color: white; margin-bottom: 2rem;">${error.message}</p>
+                    <button class="cta-button" onclick="runABCAnalysis()">Try Again</button>
+                </div>
+            `;
+        } finally {
+            if (analyzeBtn) {
+                analyzeBtn.textContent = ' Run ABC Analysis';
+                analyzeBtn.disabled = false;
+            }
+        }
+    }
+    async function sendEmailAlerts(criticalItems) {
+    try {
+        const response = await fetch('/api/send-stock-alerts', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                critical_items: criticalItems
+            })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            alert(`📧 ${result.message}`);
+        } else {
+            alert('❌ Failed to send alerts');
+        }
+    } catch (error) {
+        console.error('Email error:', error);
+        alert('❌ Error sending alerts');
+    }
+}
+
+    // Display analysis results with exact same table styling as original
+function displayAnalysisResults(result) {
+    const analysisSection = document.getElementById('analysis-section');
+    const criticalItems = identifyCriticalItems(result);
+    
+    
+    // Créer le HTML avec les graphiques correctement interpolés
+    analysisSection.innerHTML = `
+        <div class="section-header" style="margin-bottom: 3rem;">
+            <h2 style="color: white; text-align: center; margin-bottom: 1rem;">Résultats de l'analyse</h2>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="runABCAnalysis()"> Re-run Analysis</button>
+            </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="analysis-summary" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 10px; margin-bottom: 3rem;">
+            <h3 style="color: white; margin-bottom: 1.5rem; text-align: center;"> Analyse de l'Inventaire</h3>
+            <div class="summary-stats" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                <div class="summary-card" style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <span class="summary-value" style="display: block; font-size: 2rem; font-weight: bold; color: white;">${result.summary.total_items}</span>
+                    <span class="summary-label" style="color: white; opacity: 0.8;">Total Items</span>
+                </div>
+                <div class="summary-card" style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <span class="summary-value" style="display: block; font-size: 2rem; font-weight: bold; color: white;">$${Math.round(result.summary.total_value).toLocaleString()}</span>
+                    <span class="summary-label" style="color: white; opacity: 0.8;">Valeur Totale</span>
+                </div>
+                <div class="summary-card" style="text-align: center; padding: 1.5rem; background: rgba(255, 71, 87, 0.2); border-radius: 8px;">
+                    <span class="summary-value" style="display: block; font-size: 2rem; font-weight: bold; color: white;">${result.summary.a_items}</span>
+                    <span class="summary-label" style="color: white; opacity: 0.8;">Classe A</span>
+                </div>
+                <div class="summary-card" style="text-align: center; padding: 1.5rem; background: rgba(255, 165, 2, 0.2); border-radius: 8px;">
+                    <span class="summary-value" style="display: block; font-size: 2rem; font-weight: bold; color: white;">${result.summary.b_items}</span>
+                    <span class="summary-label" style="color: white; opacity: 0.8;">Classe B</span>
+                </div>
+                <div class="summary-card" style="text-align: center; padding: 1.5rem; background: rgba(46, 213, 115, 0.2); border-radius: 8px;">
+                    <span class="summary-value" style="display: block; font-size: 2rem; font-weight: bold; color: white;">${result.summary.c_items}</span>
+                    <span class="summary-label" style="color: white; opacity: 0.8;">Classe C</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="chart-container" style="text-align: center; margin-bottom: 2rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+            <h3 style="color: white; margin-bottom: 1.5rem;">Classification ABC - Diagramme en barres</h3>
+            <img src="${result.bar_chart}" alt="ABC Bar Chart" style="max-width: 100%; border-radius: 10px; background: white; padding: 10px;">
+        </div>
+
+        <!-- Cumulative Chart -->
+        <div class="chart-container" style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+            <h3 style="color: white; margin-bottom: 1.5rem;">Courbe Cumulative</h3>
+            <img src="${result.cumulative_chart}" alt="ABC Cumulative Chart" style="max-width: 100%; border-radius: 10px; background: white; padding: 10px;">
+        </div>
+
+        <!-- Detailed Results Table -->
+        <div class="results-container" style="margin-bottom: 3rem;">
+            <h3 style="color: white; margin-bottom: 1.5rem; text-align: center;"> Classification ABC détaillée</h3>
+            <div class="table-container" style="overflow-x: auto;">
+                <table class="inventory-table" style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05);">
+                    <thead>
+                        <tr>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">Nom de l'Article</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">Catégorie</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">Usage Annuel</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">% du Total</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">% Cumulé</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">Classification ABC</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">Point de Commande</th>
+                            <th style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem; text-align: left; font-weight: bold; position: sticky; top: 0; color: white; border-bottom: 2px solid rgba(255,255,255,0.3); z-index: 10;">EOQ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${result.results.map(item => `
+                            <tr>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${item.Item_Name}</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${item.Category}</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">$${Math.round(item.Annual_Usage).toLocaleString()}</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${((item.Annual_Usage / result.summary.total_value) * 100).toFixed(1)}%</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${parseFloat(item.Cumulative_Percentage).toFixed(1)}%</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white; text-align: center;" class="abc-class-${item.ABC_Class.toLowerCase()}">${item.ABC_Class}</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${Math.round(item.Reorder_Point)}</td>
+                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${Math.round(item.EOQ)}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    ${criticalItems.length > 0 ? `
+        <div class="critical-alerts-section" style="margin-top: 3rem;">
+            <div class="theory-section">
+                <div class="theory-card glass">
+                    <div class="theory-header">
+                        <h3> Alertes Stock - Items sous le Point de Commande</h3>
+                    </div>
+                    <div class="theory-content">
+                        <p><strong>${criticalItems.length} articles</strong> nécessitent une commande urgente :</p>
+                        
+                        <div class="alert-table">
+                            <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">Item Name</th>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">ABC Class</th>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">Stock Actuel</th>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">Reorder Point</th>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">Écart</th>
+                                        <th style="padding: 1rem; background: rgba(255,255,255,0.1); color: white;">Priorité</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${criticalItems.map(item => {
+                                        const currentItem = sampleData.find(sample => sample.Item_Name === item.Item_Name);
+                                        const stock = currentItem ? currentItem.Quantity : 0;
+                                        const ecart = Math.round(stock - item.Reorder_Point);
+                                        const priorityClass = item.ABC_Class === 'A' ? 'critical-A' : 
+                                                            item.ABC_Class === 'B' ? 'warning-B' : 'normal-C';
+                                        const priorityText = item.ABC_Class === 'A' ? '🔴 URGENT' : 
+                                                           item.ABC_Class === 'B' ? '🟡 ATTENTION' : '🟢 SURVEILLANCE';
+                                        
+                                        return `
+                                            <tr class="${priorityClass}" style="border-left: 4px solid ${
+                                                item.ABC_Class === 'A' ? '#e74c3c' : 
+                                                item.ABC_Class === 'B' ? '#f39c12' : '#2ecc71'
+                                            };">
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${item.Item_Name}</td>
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${item.ABC_Class}</td>
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${stock}</td>
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${Math.round(item.Reorder_Point)}</td>
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${ecart}</td>
+                                                <td style="padding: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); color: white;">${priorityText}</td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- BOUTON EMAIL ALERT AJOUTÉ ICI -->
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button class="cta-button" onclick="sendEmailAlerts(${JSON.stringify(criticalItems).replace(/'/g, "\\'")})">
+                                📧 Send Email Alerts for ${criticalItems.length} Items
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ` : `
+        <div class="theory-section">
+            <div class="theory-card glass">
+                <div class="theory-header">
+                    <h3>✅ État des Stocks - Optimal</h3>
+                </div>
+                <div class="theory-content">
+                    <p>Aucun article n'est actuellement sous son point de commande. Tous les stocks sont à des niveaux optimaux.</p>
+                </div>
+            </div>
+        </div>
+        `}
+
+    `;
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadSampleData();
+    console.log('Inventory demo loaded');
+});
+
+function identifyCriticalItems(result) {
+    const criticalItems = result.results.filter(item => {
+        const currentItem = sampleData.find(sample => sample.Item_Name === item.Item_Name);
+        return currentItem && currentItem.Quantity < item.Reorder_Point;
+    });
+    return criticalItems;
+}
+
+// FONCTION POUR LES EMAILS
+async function sendEmailAlerts(criticalItems) {
+    try {
+        const response = await fetch('/api/send-stock-alerts', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                critical_items: criticalItems
+            })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            alert(`📧 ${result.message}`);
+        } else {
+            alert('❌ Failed to send alerts');
+        }
+    } catch (error) {
+        console.error('Email error:', error);
+        alert('❌ Error sending alerts');
+    }
+}
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,2626 @@
+@charset "utf-8";
+/*
+
+TemplateMo 592 glossy touch
+
+https://templatemo.com/tm-592-glossy-touch
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    button[type="submit"] {
+        font-family: inherit;
+        font-size: 16px;
+    }
+}
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #0c0c0c 0%,
+        #1a1a2e 15%,
+        #16213e 35%,
+        #0f3460 50%,
+        #533a7d 70%,
+        #8b5a8c 85%,
+        #a0616a 100%
+    );
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/* Animated background elements */
+.bg-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+.shape:nth-child(1) {
+    width: 120px;
+    height: 80px;
+    border-radius: 15px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    transform: rotate(15deg);
+}
+.shape:nth-child(2) {
+    width: 90px;
+    height: 140px;
+    border-radius: 12px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+    transform: rotate(-20deg);
+}
+.shape:nth-child(3) {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+    transform: rotate(25deg);
+}
+.shape:nth-child(4) {
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    top: 10%;
+    right: 30%;
+    animation-delay: 1s;
+    transform: rotate(-10deg);
+}
+.shape:nth-child(5) {
+    width: 110px;
+    height: 70px;
+    border-radius: 14px;
+    bottom: 40%;
+    right: 20%;
+    animation-delay: 3s;
+    transform: rotate(30deg);
+}
+.shape:nth-child(6) {
+    width: 95px;
+    height: 95px;
+    border-radius: 20px;
+    top: 40%;
+    left: 5%;
+    animation-delay: 5s;
+    transform: rotate(-15deg);
+}
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(var(--start-rotation, 0deg));
+    }
+    50% {
+        transform: translateY(-20px)
+            rotate(calc(var(--start-rotation, 0deg) + 180deg));
+    }
+}
+/* Glass container styles */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+/* Header styles */
+header {
+    padding: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 45px;
+}
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.logo-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+.logo:hover .logo-icon svg {
+    transform: scale(1.1) translateY(-2px);
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.4));
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 12px 24px 13px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+/* Page system */
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px 20px;
+}
+.page.active {
+    display: block;
+}
+/* Content wrapper to contain page content */
+.content-wrapper {
+    min-height: calc(100vh - 300px);
+}
+/* Home page styles */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+}
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-image img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+.hero-content {
+    text-align: left;
+}
+.hero h1 {
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+button[type="submit"] {
+    font-family: inherit;
+    font-size: 16px;
+}
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.feature-card {
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+}
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+.feature-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+/* About page styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+.about-text {
+    padding: 40px;
+    color: white;
+}
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+/* Team section styles */
+.team-section {
+    margin-bottom: 60px;
+}
+.team-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.team-member {
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+.team-member:hover {
+    transform: translateY(-10px);
+}
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+.team-member:hover .team-avatar {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+}
+.team-member h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: white;
+}
+.team-member .role {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+.team-member .bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.team-social a {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.team-social a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    color: white;
+}
+/* Services page styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.service-card {
+    padding: 40px 30px;
+    color: white;
+    text-align: left;
+}
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 15px;
+}
+.service-card h3 {
+    font-size: 1.4rem;
+    color: white;
+}
+.service-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.service-features {
+    list-style: none;
+}
+.service-features li {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.service-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+/* Contact page styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.contact-map-section {
+    margin-top: 40px;
+}
+.contact-form {
+    padding: 40px;
+}
+.contact-form h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+.contact-info {
+    padding: 40px;
+    color: white;
+}
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.contact-item-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+.contact-item-text h4 {
+    color: white;
+    margin-bottom: 5px;
+}
+.contact-item-text p {
+    color: rgba(255, 255, 255, 0.8);
+}
+.contact-map {
+    padding: 40px;
+    color: white;
+    width: 100%;
+}
+.contact-map h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.map-container {
+    width: 100%;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+.map-placeholder-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+.map-placeholder p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+.map-placeholder .address {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.map-placeholder .integration-note {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+/* Footer styles */
+#footer {
+    margin-top: 60px;
+    padding: 30px 0;
+}
+.footer-content {
+    padding: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+.footer-links a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+.copyright a {
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;
+}
+/* Responsive design */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    /* Adjust padding for mobile */
+    .page {
+        padding: 30px 20px 20px;
+    }
+    .content-wrapper {
+        min-height: auto;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    .nav-links {
+        gap: 15px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        max-width: 200px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .about-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .footer-links {
+        gap: 15px;
+        flex-direction: column;
+    }
+    .footer-links a {
+        display: block;
+        text-align: center;
+    }
+    button[type="submit"] {
+        width: 100%;
+    }
+    .map-container {
+        height: 350px;
+    }
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .logo {
+        font-size: 22px;
+    }
+}
+/* ===== DEMO PAGE STYLES ===== */
+
+/* Inventory Section Styles */
+.inventory-section {
+    margin: 2rem 0;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+}
+
+.inventory-table th {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+.inventory-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Editable cells */
+.inventory-table td[contenteditable="true"] {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    cursor: text;
+}
+
+.inventory-table td[contenteditable="true"]:focus {
+    background: rgba(255,255,255,0.2);
+    outline: 2px solid rgba(255,255,255,0.3);
+}
+
+.delete-btn {
+    padding: 0.4rem 0.8rem;
+    background: #ff4757;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+/* Overall section spacing */
+.inventory-section {
+    margin: 3rem 0;
+    padding: 2rem;
+}
+
+.hero {
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.2);
+}
+
+.hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+/* Make all table text white */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    color: white; /* This makes all table text white */
+}
+
+.inventory-table th {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    color: white; /* White header text */
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.inventory-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    color: white; /* White cell text */
+}
+
+/* Editable cells - keep white text */
+.inventory-table td[contenteditable="true"] {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    cursor: text;
+    color: white;
+}
+
+.inventory-table td[contenteditable="true"]:focus {
+    background: rgba(255,255,255,0.2);
+    outline: 2px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+/* Delete button - make text visible */
+.delete-btn {
+    padding: 0.4rem 0.8rem;
+    background: #ff4757;
+    border: none;
+    border-radius: 4px;
+    color: white; /* White text on red button */
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Section header white */
+.section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.3);
+}
+.inventory-table th {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    z-index: 10;
+}
+/* Loading animation for the analyze button */
+.analyze-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.analyze-btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Loading overlay for the analysis section */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.loading-text {
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Improved Hero Spacing */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-content h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.3rem; /* Bigger text size */
+    text-align: center; /* Center the paragraph text */
+}
+
+.hero-content .cta-button {
+    margin-top: 1rem;
+    align-self: center; /* Center the button */
+    padding: 1rem 2rem;
+    font-size: 1.2rem; /* Optional: bigger button text */
+}
+/* Improved Hero Spacing - Closer to image */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduced gap to bring content closer */
+    justify-content: center; /* Vertically center with image */
+}
+
+.hero-content h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    margin-bottom: 0.5rem; /* Reduced margin */
+    line-height: 1.6;
+    font-size: 1.3rem; /* Bigger text size */
+    text-align: center; /* Center the paragraph text */
+}
+
+.hero-content .cta-button {
+    margin-top: 0.5rem; /* Reduced margin */
+    align-self: center; /* Center the button */
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+/* Move hero content closer to the image */
+.hero {
+    display: flex;
+    align-items: center; /* Vertically align image and content */
+    gap: 2rem; /* Space between image and text */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem; /* Push content closer to image */
+}
+
+.hero-content h1 {
+    margin-bottom: 0.5rem;
+    text-align: left; /* Keep text left-aligned */
+}
+
+.hero-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    text-align: left; /* Left-align paragraph text */
+}
+
+.hero-content .cta-button {
+    margin-top: 0.5rem;
+    align-self: center; /* Left-align button */
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+        order: -1; /* Met l'image en premier sur mobile */
+    }
+    
+    .abc-visual {
+        max-width: 100%;
+    }
+}
+/* Titre centré */
+.centered-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.centered-title h2 {
+    margin-bottom: 1rem;
+}
+
+/* Section ABC avec image à droite - CORRIGÉ */
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem; /* Espacement en bas */
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+        order: 0; /* Remet l'image après le texte sur mobile */
+    }
+    
+    .abc-visual {
+        max-width: 100%;
+    }
+}
+.about-content {
+    display: block !important;
+}
+
+.about-text {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+}
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Change from flex-start to center */
+    margin-bottom: 2rem;
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 450px; /* Increased from 400px */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add this for vertical centering */
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 400px; /* Increased from 350px */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+        align-items: stretch; /* Change for mobile */
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+        order: 0;
+    }
+    
+    .abc-visual {
+        max-width: 100%;
+    }
+}
+/* Style pour la boîte de résumé ABC */
+.abc-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+}
+
+.summary-title {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+/* Style pour PRINCIPE */
+.principle-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.principle-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.principle-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Grille des catégories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-card {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid;
+}
+
+.category-card h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.category-a {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+.category-b {
+    border-color: #f39c12;
+    background-color: #fef9f2;
+}
+
+.category-c {
+    border-color: #27ae60;
+    background-color: #f2fdf6;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.pros, .cons {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.pros {
+    background-color: #f0f9ff;
+    border-left: 4px solid #10b981;
+}
+
+.cons {
+    background-color: #fff7ed;
+    border-left: 4px solid #f59e0b;
+}
+
+.pros .icon {
+    color: #10b981;
+    font-size: 1.2rem;
+}
+
+.cons .icon {
+    color: #f59e0b;
+    font-size: 1.2rem;
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+}
+/* Style pour la boîte de résumé ABC */
+.abc-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.summary-title {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Style pour PRINCIPE - CORRIGÉ */
+.principle-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; /* Texte blanc sur fond bleu */
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.principle-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    opacity: 0.9;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.principle-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    color: white; /* Assure que le texte est blanc */
+}
+
+/* Grille des catégories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-card {
+    padding: 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555; /* Texte gris foncé pour meilleure lisibilité */
+}
+
+.category-a {
+    border-color: #e74c3c;
+    background-color: #ffeaea;
+}
+
+.category-b {
+    border-color: #f39c12;
+    background-color: #fff4e6;
+}
+
+.category-c {
+    border-color: #27ae60;
+    background-color: #eafaf1;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.pros, .cons {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pros {
+    border-left: 4px solid #10b981;
+    background-color: #f0fdf4;
+}
+
+.cons {
+    border-left: 4px solid #f59e0b;
+    background-color: #fffbeb;
+}
+
+.pros .icon {
+    color: #10b981;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.cons .icon {
+    color: #f59e0b;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #333; /* Texte foncé pour meilleur contraste */
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666; /* Texte gris moyen */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+    
+    .abc-summary {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+}
+
+/* Style pour la boîte de résumé ABC */
+.abc-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.summary-title {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Style pour PRINCIPE */
+.principle-box {
+    background: #667eea;
+    color: white;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.principle-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.principle-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Grille des catégories - STYLE UNIFORME */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    background: #f8f9fa;
+}
+
+.category-card h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.pros, .cons {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+}
+
+.pros .icon {
+    color: #10b981;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.cons .icon {
+    color: #f59e0b;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+}
+/* Style pour la boîte de résumé ABC */
+.abc-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Style pour PRINCIPE */
+.principle-box {
+    background: #f8f9fa;
+    color: #333;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.principle-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.principle-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Grille des catégories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    background: #f8f9fa;
+}
+
+.category-card h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.pros, .cons {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+}
+
+.pros .icon {
+    color: #28a745;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.cons .icon {
+    color: #dc3545;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+
+/* Style pour la boîte de résumé ABC */
+.abc-summary {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.abc-summary .summary-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Style pour PRINCIPE */
+.abc-summary .principle-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.abc-summary .principle-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.abc-summary .principle-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Grille des catégories */
+.abc-summary .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.abc-summary .category-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.abc-summary .category-card h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.abc-summary .category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Avantages/Inconvénients */
+.abc-summary .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.abc-summary .pros, 
+.abc-summary .cons {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.abc-summary .pros .icon {
+    color: #a3e635;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.abc-summary .cons .icon {
+    color: #fbbf24;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.abc-summary .pros strong, 
+.abc-summary .cons strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.abc-summary .pros p, 
+.abc-summary .cons p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+    }
+}
+/* Section ABC avec image centrée */
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Centre verticalement */
+    margin-bottom: 2rem;
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centre l'image */
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Style pour la boîte de résumé */
+.abc-summary-box {
+    margin-top: 2rem;
+}
+
+.abc-summary-box .principle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Grille des catégories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.category-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-header {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.category-content strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.category-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pros, .cons {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+        order: 0;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .category-header {
+        align-self: center;
+    }
+}
+
+/* Section ABC avec image centrée */
+.abc-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.abc-content {
+    flex: 1;
+}
+
+.abc-image {
+    flex: 0 0 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abc-visual {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Style pour la boîte de résumé */
+.abc-summary-box {
+    margin-top: 2rem;
+    color: white; /* Texte blanc par défaut */
+}
+
+.abc-summary-box .principle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white; /* Texte blanc */
+}
+
+/* Grille des catégories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.category-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white; /* Texte blanc */
+}
+
+.category-header {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    color: white; /* Texte blanc */
+}
+
+.category-content strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    color: white; /* Texte blanc */
+}
+
+.category-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: white; /* Texte blanc */
+    opacity: 0.9;
+}
+
+/* Avantages/Inconvénients */
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pros, .cons {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white; /* Texte blanc */
+}
+
+.pros strong, .cons strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: white; /* Texte blanc */
+}
+
+.pros p, .cons p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: white; /* Texte blanc */
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .abc-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .abc-image {
+        flex: none;
+        width: 100%;
+        order: 0;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .category-header {
+        align-self: center;
+    }
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Pour les écrans larges, centrer la dernière carte quand il y a un nombre impair */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 300px; /* Limiter la largeur pour un meilleur aspect */
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .service-card:last-child:nth-child(4n) {
+        grid-column: 2 / 3; /* Centrer la 4ème carte dans une grille de 3 colonnes */
+    }
+}
+.theory-section {
+    margin: 3rem 0 1rem 0;
+}
+
+.theory-card {
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.theory-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.theory-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.theory-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.theory-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.theory-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.theory-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.theory-features li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.formula-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.formula-section h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.formula-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1rem 0;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.formula-variables {
+    margin-top: 1rem;
+}
+
+.formula-variables p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formula-variables ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formula-variables li {
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.formula-variables li:before {
+    content: "→";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
+/* Glass effect to match your existing style */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .theory-card {
+        padding: 1.5rem;
+    }
+    
+    .theory-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .theory-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .formula-box {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .theory-header h3 {
+        font-size: 1.3rem;
+    }
+}
+.theory-section {
+    margin: 3rem 0 1rem 0;
+}
+
+.theory-card {
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.theory-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.theory-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.theory-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.theory-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.theory-content strong {
+    color: #3498db;
+}
+
+.formula-section {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formula-section h4 {
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.formula-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1.2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.formula-variables {
+    margin-top: 1.5rem;
+}
+
+.formula-variables p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* Use the same service-features class for consistent styling */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-features li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-features li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0.8rem;
+    top: 0.6rem;
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-features li strong {
+    color: #3498db;
+}
+
+/* Glass effect to match your existing style */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .theory-card {
+        padding: 1.5rem;
+    }
+    
+    .theory-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .theory-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .formula-box {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    
+    .theory-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-features li {
+        font-size: 1rem;
+        padding-left: 1.8rem;
+    }
+}
+.theory-section {
+    margin: 3rem 0 1rem 0;
+}
+
+.theory-card {
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.theory-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.theory-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.theory-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.theory-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.theory-content strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.formula-section {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formula-section h4 {
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.formula-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50; /* Keeping formula dark for contrast on white background */
+    margin: 1.2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.formula-variables {
+    margin-top: 1.5rem;
+}
+
+.formula-variables p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.formula-variables strong {
+    color: #ffffff;
+}
+
+/* Use the same service-features class for consistent styling */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-features li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-features li:before {
+    content: "•";
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0.8rem;
+    top: 0.6rem;
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-features li strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Glass effect to match your existing style */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .theory-card {
+        padding: 1.5rem;
+    }
+    
+    .theory-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .theory-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .formula-box {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    
+    .theory-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-features li {
+        font-size: 1rem;
+        padding-left: 1.8rem;
+    }
+}
