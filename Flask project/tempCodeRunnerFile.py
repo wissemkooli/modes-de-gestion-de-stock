@@ -1,1 +1,0 @@
-templatemo_592_glossy_touch/
